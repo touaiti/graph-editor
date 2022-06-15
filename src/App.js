@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import GGEditor, { Flow } from "gg-editor";
+import CustomNode from "./shape/nodes/CustomNode";
+import ImageNode from "./shape/nodes/ImageNode";
+import CircleNode from "./shape/nodes/CircleNode";
+import RectNode from "./shape/nodes/RectNode";
+import data from './data.json';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <GGEditor className="editor" id="editor">
+      <Flow className="flow" data={data} />
+      <CircleNode />
+      <CustomNode />
+      <ImageNode />
+      <RectNode />
+    </GGEditor>
   );
 }
 
